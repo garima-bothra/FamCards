@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class CardsViewModel: ObservableObject {
+class CardGroupViewModel: ObservableObject {
     @Published var dataSource: CardViewModel?
     
     private let cardsFetcher: CardFetchable
@@ -25,7 +25,6 @@ class CardsViewModel: ObservableObject {
               guard let self = self else { return }
               switch value {
               case .failure:
-                print("FAILEDDDDD")
                 self.dataSource = nil
               case .finished:
                 break

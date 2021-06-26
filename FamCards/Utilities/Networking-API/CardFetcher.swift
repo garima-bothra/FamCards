@@ -35,17 +35,6 @@ extension CardFetcher: CardFetchable {
             let error = NetworkingError.networking(description: "Coudn't create URL")
             return Fail.init(error: error).eraseToAnyPublisher()
         }
-        print("URL is created")
-        let task = session.dataTask(with: url, completionHandler: { (cardGroups: CardGroups?, response, error) in
-            if let error = error {
-                print("ERROR")
-                print(error)
-                return
-            }
-            print("CARDS")
-            //cardGroup?.cards.forEach({ print("\($0.name)\n") })
-        })
-        task.resume()
         
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .mapError { error in

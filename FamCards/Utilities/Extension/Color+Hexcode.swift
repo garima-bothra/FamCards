@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 import SwiftUI
 
-struct CustomColor: Codable {
-    var hexCode: String
+extension Color {
     
-    func getColor() -> Color? {
+    init(hexCode: String) {
         var colorString: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                 if colorString.hasPrefix("#") {
                     _ = colorString.removeFirst()
@@ -37,7 +36,7 @@ struct CustomColor: Codable {
                     let green = Double(g) / 255.0
                     let blue = Double(b) / 255.0
 
-                    return Color.init(.sRGB, red: red, green: green, blue: blue, opacity: 1)
+                    self.init(.sRGB, red: red, green: green, blue: blue, opacity: 1)
 
                 } else if colorString.count == 8 {
                     let mask = 0x000000FF
@@ -51,9 +50,9 @@ struct CustomColor: Codable {
                     let blue = Double(b) / 255.0
                     let alpha = Double(a) / 255.0
 
-                   return Color.init(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
+                   self.init(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
 
                 }
-                return nil
+        self.init(.sRGB, red: 1, green: 1, blue: 1, opacity: 1)
     }
 }

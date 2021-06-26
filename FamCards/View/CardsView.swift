@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CardsView: View {
-    @ObservedObject var viewModel: CardsViewModel
+    @ObservedObject var viewModel: CardGroupViewModel
     
-    init(viewModel: CardsViewModel){
+    init(viewModel: CardGroupViewModel){
         self.viewModel = viewModel
     }
     
