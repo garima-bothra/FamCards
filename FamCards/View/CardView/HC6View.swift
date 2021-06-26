@@ -11,16 +11,13 @@ struct HC6View: View {
     
     @Environment(\.openURL) var openURL
     
-    @State var titleText: String
-    @State var subheadingText: String
-    @State var imageURL: String
-    @State var linkURL: String
+    @State var arrowCard: Card
     
     var body: some View {
         HStack {
-        HC1View(titleText: titleText, subheadingText: subheadingText, imageURL: imageURL)
+        HC1View(smallCard: arrowCard)
         Spacer()
-            Button(action: { guard let linkURL = URL(string: linkURL ?? "") else {
+            Button(action: { guard let linkURL = URL(string: arrowCard.url ?? "") else {
                 return
             }
             openURL(linkURL) }, label: {

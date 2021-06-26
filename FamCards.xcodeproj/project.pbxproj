@@ -163,12 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				01FD9B302687515500DABB36 /* CardRow.swift */,
-				01FD9B3C26879C0C00DABB36 /* HC1View.swift */,
-				01FD9B4C2687D52200DABB36 /* HC5View.swift */,
-				01FD9B442687C22A00DABB36 /* HC6View.swift */,
+				01FD9B522687F38B00DABB36 /* CardView */,
 				01FD9B32268751C400DABB36 /* CardsView.swift */,
-				01FD9B4E2687D9E200DABB36 /* HC4View.swift */,
-				01FD9B502687E26B00DABB36 /* HC3View.swift */,
 				01FD9B3E2687A40E00DABB36 /* RemoteImage.swift */,
 				01FD9B402687BBE300DABB36 /* EntitledText.swift */,
 				01FD9B462687CD9C00DABB36 /* FormattedText.swift */,
@@ -183,6 +179,18 @@
 				01FD9B2C26872C9300DABB36 /* CardsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01FD9B522687F38B00DABB36 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				01FD9B3C26879C0C00DABB36 /* HC1View.swift */,
+				01FD9B4C2687D52200DABB36 /* HC5View.swift */,
+				01FD9B442687C22A00DABB36 /* HC6View.swift */,
+				01FD9B4E2687D9E200DABB36 /* HC4View.swift */,
+				01FD9B502687E26B00DABB36 /* HC3View.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

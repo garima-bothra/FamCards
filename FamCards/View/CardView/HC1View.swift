@@ -9,22 +9,28 @@ import SwiftUI
 
 struct HC1View: View {
     
-    @State var titleText: String
-    @State var subheadingText: String
-    @State var imageURL: String
+    @State var smallCard: Card
+//    @State var titleText: String
+//    @State var subheadingText: String
+//    @State var imageURL: String
     
     var body: some View {
         GeometryReader { geometry in
         HStack {
-            RemoteImage(url: imageURL)
+            if URL(string: smallCard.icon?.image_url ?? "") != nil {
+                RemoteImage(url: smallCard.icon?.image_url ?? "")
                 .aspectRatio(contentMode: .fit)
-                
+            }
             
             VStack(alignment: .leading) {
-            Text(titleText)
+                if let title = smallCard.title {
+                Text(title)
+                }
+                if let subheadingText = smallCard.description {
             Text(subheadingText)
                 .font(.subheadline)
                 .foregroundColor(.gray)
+            }
             }
             Spacer()
         }

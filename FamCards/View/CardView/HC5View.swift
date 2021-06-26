@@ -10,19 +10,15 @@ import SwiftUI
 struct HC5View: View {
     
     
-    @State var imageURL: String
+    @State var imageCard: Card
     
     var body: some View {
         GeometryReader { geometry in
-        RemoteImage(url: imageURL)
+            if URL(string: imageCard.bg_image?.image_url ?? "") != nil {
+                RemoteImage(url: imageCard.bg_image?.image_url ?? "")
             .aspectRatio(contentMode: .fill)
             .frame(height: geometry.size.height * 0.15)
+            }
         }
     }
 }
-
-//struct HC5View_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HC5View()
-//    }
-//}
