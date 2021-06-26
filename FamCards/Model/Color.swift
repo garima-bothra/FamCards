@@ -1,0 +1,59 @@
+//
+//  Color.swift
+//  FamCards
+//
+//  Created by Garima Bothra on 26/06/21.
+//
+
+import Foundation
+import UIKit
+import SwiftUI
+
+struct CustomColor: Codable {
+    var hexCode: String
+    
+    func getColor() -> Color? {
+        var colorString: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                if colorString.hasPrefix("#") {
+                    _ = colorString.removeFirst()
+                }
+        // Fix invalid values
+                if colorString.count > 8 {
+                   colorString = String(colorString.prefix(8))
+                }
+
+                // Scanner creation
+                let scanner = Scanner(string:colorString)
+
+                var color: UInt64 = 0
+                scanner.scanHexInt64(&color)
+        if colorString.count == 6 {
+                    let mask = 0x0000FF
+                    let r = Int(color >> 16) & mask
+                    let g = Int(color >> 8) & mask
+                    let b = Int(color) & mask
+
+                    let red = Double(r) / 255.0
+                    let green = Double(g) / 255.0
+                    let blue = Double(b) / 255.0
+
+                    return Color.init(.sRGB, red: red, green: green, blue: blue, opacity: 1)
+
+                } else if colorString.count == 8 {
+                    let mask = 0x000000FF
+                    let r = Int(color >> 24) & mask
+                    let g = Int(color >> 16) & mask
+                    let b = Int(color >> 8) & mask
+                    let a = Int(color) & mask
+
+                    let red = Double(r) / 255.0
+                    let green = Double(g) / 255.0
+                    let blue = Double(b) / 255.0
+                    let alpha = Double(a) / 255.0
+
+                   return Color.init(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
+
+                }
+                return nil
+    }
+}
