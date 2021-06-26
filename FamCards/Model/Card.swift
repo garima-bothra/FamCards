@@ -8,36 +8,54 @@
 import Foundation
 
 //MARK: - Card Sub-Models
+//struct CardImage: Codable {
+//    enum image_type {
+//        case asset(asset_type: String?)
+//        case external(image_url: URL?)
+//    }
+//}
+
 struct CardImage: Codable {
-    enum image_type {
-        case asset(asset_type: String?)
-        case external(image_url: URL?)
+    enum image_type: String {
+        case asset
+        case external
     }
+    var image_url: String?
+    var asset_type: String?
 }
 
 struct Gradient: Codable {
-    let colours: [CustomColor]
-    let angle: Double
+    var colours: [String]?
+    var angle: Double
 }
 
 struct CallToAction: Codable {
-    let text: String
-    let bg_color: CustomColor?
-    let url: URL?
-    let text_color: CustomColor?
+    var text: String
+    var bg_color: String?
+    var url: String?
+    var text_color: String?
 }
 
 //MARK: - Card Model
 struct  Card: Codable {
-    let name: String
-    let formatted_title: FormattedTitle?
-    let title: String?
-    let formatted_description: FormattedTitle?
-    let description: String?
-    let icon: CardImage?
-    let url: URL?
-    let bg_image: CardImage?
-    let bg_color: CustomColor?
-    let bg_gradient: Gradient?
-    let cta: [CallToAction]
+    var name: String
+    var formatted_title: FormattedTitle?
+    var title: String?
+    var formatted_description: FormattedTitle?
+    var description: String?
+    var icon: CardImage?
+    var url: String?
+    var bg_image: CardImage?
+    var bg_color: String?
+    var bg_gradient: Gradient?
+    var cta: [CallToAction]?
+}
+
+
+
+//MARK: - Card Error Model
+
+enum NetworkingError: Error {
+    case parsing(description: String)
+    case networking(description: String)
 }

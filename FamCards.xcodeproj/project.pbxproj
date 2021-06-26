@@ -16,6 +16,12 @@
 		01FD9B222686F76600DABB36 /* FormattedTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B212686F76600DABB36 /* FormattedTitle.swift */; };
 		01FD9B242686F8F700DABB36 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B232686F8F700DABB36 /* Card.swift */; };
 		01FD9B2626870DC300DABB36 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B2526870DC300DABB36 /* Color.swift */; };
+		01FD9B292687245700DABB36 /* CardFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B282687245700DABB36 /* CardFetcher.swift */; };
+		01FD9B2B26872AAF00DABB36 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B2A26872AAF00DABB36 /* Parsing.swift */; };
+		01FD9B2D26872C9300DABB36 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B2C26872C9300DABB36 /* CardsViewModel.swift */; };
+		01FD9B312687515500DABB36 /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B302687515500DABB36 /* CardRow.swift */; };
+		01FD9B33268751C400DABB36 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B32268751C400DABB36 /* Cards.swift */; };
+		01FD9B352687731700DABB36 /* CardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B342687731700DABB36 /* CardGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		01FD9B212686F76600DABB36 /* FormattedTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTitle.swift; sourceTree = "<group>"; };
 		01FD9B232686F8F700DABB36 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		01FD9B2526870DC300DABB36 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		01FD9B282687245700DABB36 /* CardFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFetcher.swift; sourceTree = "<group>"; };
+		01FD9B2A26872AAF00DABB36 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		01FD9B2C26872C9300DABB36 /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		01FD9B302687515500DABB36 /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
+		01FD9B32268751C400DABB36 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		01FD9B342687731700DABB36 /* CardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,8 @@
 				01FD9B0D2686F2C100DABB36 /* AppDelegate.swift */,
 				01FD9B0F2686F2C100DABB36 /* SceneDelegate.swift */,
 				01FD9B112686F2C100DABB36 /* ContentView.swift */,
+				01FD9B302687515500DABB36 /* CardRow.swift */,
+				01FD9B32268751C400DABB36 /* Cards.swift */,
 				01FD9B27268718AC00DABB36 /* Model */,
 				01FD9B132686F2C400DABB36 /* Assets.xcassets */,
 				01FD9B182686F2C400DABB36 /* LaunchScreen.storyboard */,
@@ -87,7 +101,11 @@
 			children = (
 				01FD9B212686F76600DABB36 /* FormattedTitle.swift */,
 				01FD9B232686F8F700DABB36 /* Card.swift */,
+				01FD9B342687731700DABB36 /* CardGroup.swift */,
 				01FD9B2526870DC300DABB36 /* Color.swift */,
+				01FD9B282687245700DABB36 /* CardFetcher.swift */,
+				01FD9B2C26872C9300DABB36 /* CardsViewModel.swift */,
+				01FD9B2A26872AAF00DABB36 /* Parsing.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,8 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				01FD9B0E2686F2C100DABB36 /* AppDelegate.swift in Sources */,
+				01FD9B352687731700DABB36 /* CardGroup.swift in Sources */,
 				01FD9B102686F2C100DABB36 /* SceneDelegate.swift in Sources */,
+				01FD9B312687515500DABB36 /* CardRow.swift in Sources */,
 				01FD9B242686F8F700DABB36 /* Card.swift in Sources */,
+				01FD9B292687245700DABB36 /* CardFetcher.swift in Sources */,
+				01FD9B33268751C400DABB36 /* Cards.swift in Sources */,
+				01FD9B2B26872AAF00DABB36 /* Parsing.swift in Sources */,
+				01FD9B2D26872C9300DABB36 /* CardsViewModel.swift in Sources */,
 				01FD9B122686F2C100DABB36 /* ContentView.swift in Sources */,
 				01FD9B222686F76600DABB36 /* FormattedTitle.swift in Sources */,
 				01FD9B2626870DC300DABB36 /* Color.swift in Sources */,

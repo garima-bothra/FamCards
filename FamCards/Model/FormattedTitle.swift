@@ -9,7 +9,7 @@ import Foundation
 
 struct Entity: Codable {
     let text : String
-    let color : CustomColor?
+    let color : String?
     let url : URL?
 }
 
