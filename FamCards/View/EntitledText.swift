@@ -11,15 +11,13 @@ struct EntitledText: View {
     
     @Environment(\.openURL) var openURL
     
-    @State var text: String
-    @State var color: Color
-    @State var url: String
+    @State var entity: Entity
     
     var body: some View {
-        Text(text)
-            .foregroundColor(color)
+        Text(entity.text)
+            .foregroundColor(Color(hexCode: (entity.color ?? "#000000")))
             .onTapGesture {
-                guard let linkURL = URL(string: url) else {
+                guard let linkURL = URL(string: entity.url ?? "") else {
                     return
                 }
                 openURL(linkURL)

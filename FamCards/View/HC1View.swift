@@ -11,11 +11,12 @@ struct HC1View: View {
     
     @State var titleText: String
     @State var subheadingText: String
+    @State var imageURL: String
     
     var body: some View {
         GeometryReader { geometry in
         HStack {
-            RemoteImage(url:  "https://westeros-staging.s3.amazonaws.com/media/images/generic/e154e9ddcb8a42ff94a926cb2d7927d8.png")
+            RemoteImage(url: imageURL)
                 .aspectRatio(contentMode: .fit)
                 
             
@@ -27,17 +28,12 @@ struct HC1View: View {
             }
             Spacer()
         }
-        .padding()
-        .background(Color(hexCode: "#F2F3F3"))
-        .cornerRadius(20)
-        
-        
         }
     }
 }
 
-struct HC1View_Previews: PreviewProvider {
-    static var previews: some View {
-        HC1View(titleText: "Small display card", subheadingText: "Arya Stark")
-    }
-}
+//struct HC1View_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HC1View(titleText: "Small display card", subheadingText: "Arya Stark")
+//    }
+//}

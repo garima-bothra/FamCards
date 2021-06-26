@@ -23,6 +23,7 @@ struct ActionButtonView: View {
         openURL(linkURL) }, label: {
             Text(text)
         })
+        .padding()
         .background(bgColor)
         .foregroundColor(textColor)
         .cornerRadius(10)

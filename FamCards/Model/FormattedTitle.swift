@@ -8,12 +8,16 @@
 import Foundation
 
 struct Entity: Codable {
-    let text : String
-    let color : String?
-    let url : URL?
+    var text : String
+    var color : String?
+    var url : String?
 }
 
 struct FormattedTitle: Codable {
-    let text: String
-    let entities: [Entity]
+    var text: String
+    var entities: [Entity]
+    
+    var components: [String] {
+        return text.components(separatedBy: "{}")
+    }
 }

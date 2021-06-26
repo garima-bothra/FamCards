@@ -8,21 +8,21 @@
 import Foundation
 
 //MARK: - Card Sub-Models
-struct CardImage: Codable {
-    enum image_type {
-        case asset(asset_type: String?)
-        case external(image_url: URL?)
-    }
-}
-
 //struct CardImage: Codable {
-//    enum image_type: String {
-//        case asset
-//        case external
+//    enum image_type {
+//        case asset(asset_type: String?)
+//        case external(image_url: URL?)
 //    }
-//    var image_url: String?
-//    var asset_type: String?
 //}
+
+struct CardImage: Codable {
+    enum image_type: String {
+        case asset
+        case external
+    }
+    var image_url: String?
+    var asset_type: String?
+}
 
 struct Gradient: Codable {
     var colours: [String]?
