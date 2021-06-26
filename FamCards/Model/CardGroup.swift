@@ -25,7 +25,7 @@ struct CardGroup: Codable {
     var name: String
     var cards: [Card]
     var is_scrollable: Bool
-    var card_type: Int?
+    //var card_type: Int?
 }
 
 typealias CardGroups = [CardGroup]

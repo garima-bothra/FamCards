@@ -15,9 +15,18 @@ struct CardsView: View {
     }
     
     var body: some View {
-        List(content: content)
-            .onAppear(perform: viewModel.refresh)
-            .listStyle(GroupedListStyle())
+        GeometryReader { geometry in
+        VStack() {
+//        List(content: content)
+//            .onAppear(perform: viewModel.refresh)
+//            .listStyle(GroupedListStyle())
+            
+            HC1View(titleText: "Small display card", subheadingText: "Arya Stark")
+                .frame(height: geometry.size.height * 0.1)
+           // Spacer(minLength: 50)
+        }
+        .padding()
+    }
     }
 }
 

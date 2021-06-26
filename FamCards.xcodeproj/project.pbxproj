@@ -21,6 +21,10 @@
 		01FD9B312687515500DABB36 /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B302687515500DABB36 /* CardRow.swift */; };
 		01FD9B33268751C400DABB36 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B32268751C400DABB36 /* CardsView.swift */; };
 		01FD9B352687731700DABB36 /* CardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B342687731700DABB36 /* CardGroup.swift */; };
+		01FD9B3D26879C0C00DABB36 /* HC1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B3C26879C0C00DABB36 /* HC1View.swift */; };
+		01FD9B3F2687A40E00DABB36 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B3E2687A40E00DABB36 /* RemoteImage.swift */; };
+		01FD9B412687BBE300DABB36 /* EntitledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B402687BBE300DABB36 /* EntitledText.swift */; };
+		01FD9B432687BDCA00DABB36 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B422687BDCA00DABB36 /* ActionButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		01FD9B302687515500DABB36 /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
 		01FD9B32268751C400DABB36 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		01FD9B342687731700DABB36 /* CardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGroup.swift; sourceTree = "<group>"; };
+		01FD9B3C26879C0C00DABB36 /* HC1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HC1View.swift; sourceTree = "<group>"; };
+		01FD9B3E2687A40E00DABB36 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		01FD9B402687BBE300DABB36 /* EntitledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitledText.swift; sourceTree = "<group>"; };
+		01FD9B422687BDCA00DABB36 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,7 @@
 				01FD9B3B26878F0400DABB36 /* ViewModel */,
 				01FD9B3A26878EF200DABB36 /* View */,
 				01FD9B3826878EC200DABB36 /* Utilities */,
+				01FD9B1B2686F2C400DABB36 /* Info.plist */,
 				01FD9B152686F2C400DABB36 /* Preview Content */,
 			);
 			path = FamCards;
@@ -132,7 +141,6 @@
 				01FD9B0D2686F2C100DABB36 /* AppDelegate.swift */,
 				01FD9B0F2686F2C100DABB36 /* SceneDelegate.swift */,
 				01FD9B182686F2C400DABB36 /* LaunchScreen.storyboard */,
-				01FD9B1B2686F2C400DABB36 /* Info.plist */,
 				01FD9B132686F2C400DABB36 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
@@ -142,7 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				01FD9B302687515500DABB36 /* CardRow.swift */,
+				01FD9B3C26879C0C00DABB36 /* HC1View.swift */,
 				01FD9B32268751C400DABB36 /* CardsView.swift */,
+				01FD9B3E2687A40E00DABB36 /* RemoteImage.swift */,
+				01FD9B402687BBE300DABB36 /* EntitledText.swift */,
+				01FD9B422687BDCA00DABB36 /* ActionButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,8 +240,12 @@
 				01FD9B0E2686F2C100DABB36 /* AppDelegate.swift in Sources */,
 				01FD9B352687731700DABB36 /* CardGroup.swift in Sources */,
 				01FD9B102686F2C100DABB36 /* SceneDelegate.swift in Sources */,
+				01FD9B432687BDCA00DABB36 /* ActionButtonView.swift in Sources */,
+				01FD9B3D26879C0C00DABB36 /* HC1View.swift in Sources */,
 				01FD9B312687515500DABB36 /* CardRow.swift in Sources */,
+				01FD9B412687BBE300DABB36 /* EntitledText.swift in Sources */,
 				01FD9B242686F8F700DABB36 /* Card.swift in Sources */,
+				01FD9B3F2687A40E00DABB36 /* RemoteImage.swift in Sources */,
 				01FD9B292687245700DABB36 /* CardFetcher.swift in Sources */,
 				01FD9B33268751C400DABB36 /* CardsView.swift in Sources */,
 				01FD9B2B26872AAF00DABB36 /* Parsing.swift in Sources */,
