@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HC5View: View {
     
-    
     @State var imageCard: Card
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,7 +20,12 @@ struct HC5View: View {
                     .frame(height: geometry.size.height )
                     .clipped()
                     .cardStyle()
-                
+                    .onTapGesture() {
+                        if let linkURL = URL(string: imageCard.url ?? "")
+                        {
+                        openURL(linkURL)
+                    }
+                    }
             }
         }
     }

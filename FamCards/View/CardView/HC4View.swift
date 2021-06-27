@@ -10,6 +10,7 @@ import SwiftUI
 struct HC4View: View {
     
     @State var centreCard: Card
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         GeometryReader { geometry in
@@ -42,6 +43,12 @@ struct HC4View: View {
             .background(LinearGradient(gradient: getGradient(hexStrings: centreCard.bg_gradient?.colors ?? []), startPoint: .leading, endPoint: .trailing))
             .background(Color(hexCode: centreCard.bg_color ?? "#FFFFFF"))
             .cardStyle()
+            .onTapGesture() {
+                if let linkURL = URL(string: centreCard.url ?? "")
+                {
+                openURL(linkURL)
+            }
+            }
         }
     }
 }

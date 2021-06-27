@@ -10,6 +10,7 @@ import SwiftUI
 struct HC1View: View {
     
     @State var smallCard: Card
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         GeometryReader { geometry in
@@ -37,6 +38,12 @@ struct HC1View: View {
             .padding()
             .background(Color(hexCode: smallCard.bg_color ?? "#FFFFFF"))
             .cardStyle()
+            .onTapGesture() {
+                if let linkURL = URL(string: smallCard.url ?? "")
+                {
+                openURL(linkURL)
+            }
+            }
         }
     }
 }

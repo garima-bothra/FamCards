@@ -10,6 +10,7 @@ import SwiftUI
 struct HC3View: View {
     
     @State var bigCard: Card
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         
@@ -45,6 +46,12 @@ struct HC3View: View {
             .padding()
             .background(RemoteImage(url: bigCard.bg_image?.image_url ?? ""))
             .cardStyle()
+            .onTapGesture() {
+                if let linkURL = URL(string: bigCard.url ?? "")
+                {
+                openURL(linkURL)
+            }
+            }
         }
     }
 }

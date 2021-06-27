@@ -10,7 +10,6 @@ import SwiftUI
 struct HC6View: View {
     
     @Environment(\.openURL) var openURL
-    
     @State var arrowCard: Card
     
     var body: some View {
@@ -28,6 +27,12 @@ struct HC6View: View {
             .padding()
             .background(Color(hexCode: arrowCard.bg_color ?? "#FFFFFF"))
             .cardStyle()
+            .onTapGesture() {
+                if let linkURL = URL(string: arrowCard.url ?? "")
+                {
+                openURL(linkURL)
+            }
+            }
         }
     }
 }
