@@ -15,26 +15,20 @@ struct HC6View: View {
     
     var body: some View {
         GeometryReader() { geometry in
-        HStack {
-        HC1View(smallCard: arrowCard)
-        Spacer()
-            Button(action: { guard let linkURL = URL(string: arrowCard.url ?? "") else {
-                return
+            HStack {
+                HC1View(smallCard: arrowCard)
+                Spacer()
+                Button(action: { guard let linkURL = URL(string: arrowCard.url ?? "") else {
+                    return
+                }
+                openURL(linkURL) }, label: {
+                    Image(systemName: "arrow.right")
+                })
             }
-            openURL(linkURL) }, label: {
-                Image(systemName: "arrow.right")
-            })
-        }
-        .padding()
-        .background(Color(hexCode: arrowCard.bg_color ?? "#FFFFFF"))
-        .cardStyle()
-  //      .frame( height: geometry.size.height*0.1, alignment: .leading)
+            .padding()
+            .background(Color(hexCode: arrowCard.bg_color ?? "#FFFFFF"))
+            .cardStyle()
         }
     }
 }
 
-//struct HC6View_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HC6View()
-//    }
-//}

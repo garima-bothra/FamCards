@@ -17,12 +17,10 @@ struct HC5View: View {
             if URL(string: imageCard.bg_image?.image_url ?? "") != nil {
                 RemoteImage(url: imageCard.bg_image?.image_url ?? "")
                     .aspectRatio(contentMode: .fill)
-                    
-               //     .background(Color(hexCode: imageCard.bg_color ?? "#FFFFFF"))
                     .frame(height: geometry.size.height )
                     .clipped()
                     .cardStyle()
-                    
+                
             }
         }
     }

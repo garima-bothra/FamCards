@@ -13,41 +13,36 @@ struct HC4View: View {
     
     var body: some View {
         GeometryReader { geometry in
-        VStack {
-            if let url = centreCard.icon?.image_url {
-            RemoteImage(url: url)
-                .aspectRatio(contentMode: .fit)
-                .frame(height: geometry.size.height * 0.25)
-            }
-            Text(centreCard.name)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+            VStack {
+                if let url = centreCard.icon?.image_url {
+                    RemoteImage(url: url)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: geometry.size.height * 0.25)
+                }
+                Text(centreCard.name)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
                 
-            if let title = centreCard.title {
-            Text(title)
-                .font(.headline)
-                .bold()
-            }
-            if let cta = centreCard.cta {
-            HStack {
-                ForEach(0..<cta.count, id: \.self){
-                    var action = cta[$0]
-                    ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#FFFFFF"), textColor: (action.text_color ?? "#FFFFFF"), url: action.url ?? "")
+                if let title = centreCard.title {
+                    Text(title)
+                        .font(.headline)
+                        .bold()
+                }
+                if let cta = centreCard.cta {
+                    HStack {
+                        ForEach(0..<cta.count, id: \.self){
+                            var action = cta[$0]
+                            ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#FFFFFF"), textColor: (action.text_color ?? "#FFFFFF"), url: action.url ?? "")
+                        }
+                    }
+                    .frame(width: geometry.size.width * 0.9)
                 }
             }
-            .frame(width: geometry.size.width * 0.9)
-            }
-        }
-        .padding()
-        .background(Color(hexCode: centreCard.bg_color ?? "#FFFFFF"))
-        .cardStyle()
-    //    .frame( height: geometry.size.height*0.3, alignment: .leading)
+            .padding()
+            .background(LinearGradient(gradient: getGradient(hexStrings: centreCard.bg_gradient?.colors ?? []), startPoint: .leading, endPoint: .trailing))
+            .background(Color(hexCode: centreCard.bg_color ?? "#FFFFFF"))
+            .cardStyle()
         }
     }
 }
 
-//struct HC4View_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HC4View()
-//    }
-//}

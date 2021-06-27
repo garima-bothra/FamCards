@@ -56,3 +56,8 @@ extension Color {
                 }
     }
 }
+
+func getGradient(hexStrings: [String?])-> Gradient {
+    let colours: [Color] = hexStrings.map{ Color(hexCode: $0 ?? "#FFFFFF") }
+    return Gradient(colors: colours)
+}

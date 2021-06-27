@@ -24,11 +24,6 @@ struct CardImage: Codable {
     var asset_type: String?
 }
 
-struct Gradient: Codable {
-    var colours: [String]?
-    var angle: Double
-}
-
 struct CallToAction: Codable {
     var text: String
     var bg_color: String?
@@ -50,6 +45,12 @@ struct  Card: Codable {
     var bg_color: String?
     var bg_gradient: Gradient?
     var cta: [CallToAction]?
+    
+    struct Gradient: Codable {
+        var colors: [String]?
+        var angle: Double
+    }
+    
 }
 
 

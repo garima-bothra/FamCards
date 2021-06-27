@@ -23,15 +23,15 @@ class GroupsViewModel: ObservableObject {
         cardsFetcher.fetchCard().map(CardGroupsViewModel.init)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] value in
-              guard let self = self else { return }
-              switch value {
-              case .failure:
-                print("Fetch failed")
-                self.dataSource = nil
-              case .finished:
-                print("Data fetched")
-                break
-              }
+                guard let self = self else { return }
+                switch value {
+                case .failure:
+                    print("Fetch failed")
+                    self.dataSource = nil
+                case .finished:
+                    print("Data fetched")
+                    break
+                }
             }, receiveValue: { [weak self] card in
                 guard let self = self else { return }
                 self.dataSource = card
@@ -41,12 +41,6 @@ class GroupsViewModel: ObservableObject {
     }
 }
 
-//extension GroupsViewModel {
-//    var cardGroupView: some View {
-//      
-//      )
-//    }
-//}
 
 struct CardGroupViewModel: Identifiable {
     var id = UUID()

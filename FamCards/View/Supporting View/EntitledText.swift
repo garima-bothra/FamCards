@@ -15,6 +15,8 @@ struct EntitledText: View {
     
     var body: some View {
         Text(entity.text)
+            .font(.system(size: 25))
+            .bold()
             .foregroundColor(Color(hexCode: (entity.color ?? "#000000")))
             .onTapGesture {
                 guard let linkURL = URL(string: entity.url ?? "") else {
