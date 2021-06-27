@@ -35,7 +35,7 @@ struct HC4View: View {
                             ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#FFFFFF"), textColor: (action.text_color ?? "#FFFFFF"), url: action.url ?? "")
                         }
                     }
-                    .frame(width: geometry.size.width * 0.9)
+                    .frame(width: geometry.size.width * 0.91)
                 }
             }
             .padding()

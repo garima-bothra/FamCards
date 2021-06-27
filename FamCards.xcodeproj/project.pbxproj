@@ -188,10 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				01FD9B3C26879C0C00DABB36 /* HC1View.swift */,
+				01FD9B502687E26B00DABB36 /* HC3View.swift */,
+				01FD9B4E2687D9E200DABB36 /* HC4View.swift */,
 				01FD9B4C2687D52200DABB36 /* HC5View.swift */,
 				01FD9B442687C22A00DABB36 /* HC6View.swift */,
-				01FD9B4E2687D9E200DABB36 /* HC4View.swift */,
-				01FD9B502687E26B00DABB36 /* HC3View.swift */,
 			);
 			path = CardView;
 			sourceTree = "<group>";

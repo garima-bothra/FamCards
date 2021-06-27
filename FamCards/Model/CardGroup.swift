@@ -37,7 +37,7 @@ func getHeight(designType: DesignType) -> Float {
     case .HC3 :
         return 0.4
     case .HC4 :
-        return 0.3
+        return 0.25
     case .HC6 :
         return 0.1
     case .HC5:

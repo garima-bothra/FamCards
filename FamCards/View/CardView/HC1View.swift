@@ -22,9 +22,11 @@ struct HC1View: View {
                 VStack(alignment: .leading) {
                     if let title = smallCard.title {
                         Text(title)
+                            .lineLimit(1)
                     }
                     if let subheadingText = smallCard.description {
                         Text(subheadingText)
+                            .lineLimit(1)
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }

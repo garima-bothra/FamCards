@@ -30,6 +30,7 @@ struct CardGroupsView: View {
                             Text("Card Groups Nil")
                         }
                         Spacer()
+                            .frame(minHeight: 20)
                     }
                     .padding()
                     .background(Color(hexCode: "#F2F3F3"))

@@ -21,7 +21,7 @@ struct CardRow: View {
                     if let cards = viewModel.cards {
                         ForEach(0..<cards.count, id: \.self){
                             CardView(designType: viewModel.designType, card: viewModel.cards[$0])
-                                .frame(width: viewModel.isScrollable ? geometry.size.width/CGFloat(cards.count) + 20: geometry.size.width/CGFloat(cards.count))
+                                .frame(width: viewModel.isScrollable ? geometry.size.width/CGFloat(cards.count) * 1.5 : geometry.size.width/CGFloat(cards.count))
                         }
                     }
                 }

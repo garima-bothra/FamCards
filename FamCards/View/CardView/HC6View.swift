@@ -22,7 +22,7 @@ struct HC6View: View {
                     return
                 }
                 openURL(linkURL) }, label: {
-                    Image(systemName: "arrow.right")
+                    Image("arrow")
                 })
             }
             .padding()

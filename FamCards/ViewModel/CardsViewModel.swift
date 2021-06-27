@@ -35,7 +35,6 @@ class GroupsViewModel: ObservableObject {
             }, receiveValue: { [weak self] card in
                 guard let self = self else { return }
                 self.dataSource = card
-                print(card)
             })
             .store(in: &disposables)
     }
