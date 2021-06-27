@@ -21,10 +21,14 @@ struct HC3View: View {
                     FormattedText(formatTitle: formattedTitle)
                 }
                 Spacer()
+                if let description = bigCard.formatted_description {
+                    FormattedDescription(formatDescription: description)
+                } else {
                 if let description = bigCard.description {
                     Text(description)
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
+                }
                 }
                 Spacer()
                 if let cta = bigCard.cta {

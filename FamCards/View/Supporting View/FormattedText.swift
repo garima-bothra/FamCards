@@ -14,10 +14,21 @@ struct FormattedText: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
         ForEach((0..<formatTitle.components.count - 1), id: \.self){
-            Text(formatTitle.components[$0])
             EntitledText(entity: formatTitle.entities[$0])
         }
-            //Text(formatTitle.components[formatTitle.components.count - 1])
+    }
+    }
+}
+
+struct FormattedDescription: View {
+    
+    @State var formatDescription: FormattedTitle
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+        ForEach((0..<formatDescription.components.count - 1), id: \.self){
+            EntitledDescription(entity: formatDescription.entities[$0])
+        }
     }
     }
 }

@@ -26,3 +26,21 @@ struct EntitledText: View {
             }
     }
 }
+
+struct EntitledDescription: View {
+    
+    @Environment(\.openURL) var openURL
+    
+    @State var entity: Entity
+    
+    var body: some View {
+        Text(entity.text)
+            .foregroundColor(Color(hexCode: (entity.color ?? "#000000")))
+            .onTapGesture {
+                guard let linkURL = URL(string: entity.url ?? "") else {
+                    return
+                }
+                openURL(linkURL)
+            }
+    }
+}
