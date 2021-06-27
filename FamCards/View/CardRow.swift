@@ -16,12 +16,16 @@ struct CardRow: View {
     
     var body: some View {
         GeometryReader() { geometry in
-            HStack(spacing:2){
-                if let cards = viewModel.cards {
-                    ForEach(0..<cards.count, id: \.self){
-                        CardView(designType: viewModel.designType, card: viewModel.cards[$0])
+            ScrollView(viewModel.isScrollable ? [.horizontal] : []) {
+                HStack(spacing:10){
+                    if let cards = viewModel.cards {
+                        ForEach(0..<cards.count, id: \.self){
+                            CardView(designType: viewModel.designType, card: viewModel.cards[$0])
+                                .frame(width: viewModel.isScrollable ? geometry.size.width/CGFloat(cards.count) + 20: geometry.size.width/CGFloat(cards.count))
+                        }
                     }
                 }
+                .frame(width: geometry.size.width,height: geometry.size.height)
             }
         }
     }
