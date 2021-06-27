@@ -26,10 +26,10 @@ class GroupsViewModel: ObservableObject {
                 guard let self = self else { return }
                 switch value {
                 case .failure:
-                    print("Fetch failed")
+                //    print("Fetch failed")
                     self.dataSource = nil
                 case .finished:
-                    print("Data fetched")
+               //     print("Data fetched")
                     break
                 }
             }, receiveValue: { [weak self] card in
