@@ -19,7 +19,18 @@ struct CardGroupsView: View {
     var body: some View {
         GeometryReader() { geometry in
             NavigationView {
-                ScrollView() {
+                    switch (viewModel.state) {
+                    case .loading:
+                        ProgressView().onAppear(perform: viewModel.refresh)
+                    case .failed:
+                        VStack {
+                        Image("errorImage")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            Button("Try again", action: {viewModel.refresh()})
+                        }
+                    case .loaded:
+                        ScrollView() {
                     VStack(spacing: 10) {
                         Spacer()
                         if let cardViewModels = viewModel.dataSource?.cardGroups {
@@ -28,16 +39,15 @@ struct CardGroupsView: View {
                                 CardRow(viewModel: cardViewModels[$0])
                                     .frame(height: geometry.size.height * CGFloat(getHeight(designType: design)))
                             }
-                        } else {
-                            Text("Card Groups Nil")
                         }
                         Spacer()
                             .frame(minHeight: 20)
                     }
-                    .padding()
-                    .background(Color(hexCode: "#F2F3F3"))
-                    .frame(width: geometry.size.width,height: geometry.size.height)
-                    .onAppear(perform: viewModel.refresh)
+                    }
+                        .padding()
+                        .background(Color(hexCode: "#F2F3F3"))
+                        .frame(width: geometry.size.width,height: geometry.size.height)
+                        .onAppear(perform: viewModel.refresh)
                 }
             }
         }

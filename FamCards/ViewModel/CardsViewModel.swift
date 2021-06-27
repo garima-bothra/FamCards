@@ -12,6 +12,13 @@ import Combine
 //MARK: Groups View Model
 class GroupsViewModel: ObservableObject {
     @Published var dataSource: CardGroupsViewModel?
+    enum State {
+            case loading
+            case failed
+            case loaded
+        }
+    
+    @Published private(set) var state = State.loading
     
     private let cardsFetcher: CardFetchable
     private var disposables = Set<AnyCancellable>()
@@ -27,9 +34,11 @@ class GroupsViewModel: ObservableObject {
                 guard let self = self else { return }
                 switch value {
                 case .failure:
+                    self.state = .failed
                 //    print("Fetch failed")
                     self.dataSource = nil
                 case .finished:
+                    self.state = .loaded
                //     print("Data fetched")
                     break
                 }
