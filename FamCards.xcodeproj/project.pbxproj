@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010BAB9C268854FD00B02DB9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BAB9B268854FD00B02DB9 /* CardView.swift */; };
+		01E738AD2688D48F0076BEA7 /* APIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E738AC2688D48F0076BEA7 /* APIFile.swift */; };
 		01FD9B0E2686F2C100DABB36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B0D2686F2C100DABB36 /* AppDelegate.swift */; };
 		01FD9B102686F2C100DABB36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD9B0F2686F2C100DABB36 /* SceneDelegate.swift */; };
 		01FD9B142686F2C400DABB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FD9B132686F2C400DABB36 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		010BAB9B268854FD00B02DB9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		01E738AC2688D48F0076BEA7 /* APIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFile.swift; sourceTree = "<group>"; };
 		01FD9B0A2686F2C100DABB36 /* FamCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FD9B0D2686F2C100DABB36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01FD9B0F2686F2C100DABB36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				01FD9B3826878EC200DABB36 /* Utilities */,
 				01FD9B1B2686F2C400DABB36 /* Info.plist */,
 				01FD9B152686F2C400DABB36 /* Preview Content */,
+				01E738AC2688D48F0076BEA7 /* APIFile.swift */,
 			);
 			path = FamCards;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				01FD9B55268832A000DABB36 /* CardViewModel.swift in Sources */,
 				01FD9B0E2686F2C100DABB36 /* AppDelegate.swift in Sources */,
+				01E738AD2688D48F0076BEA7 /* APIFile.swift in Sources */,
 				01FD9B352687731700DABB36 /* CardGroup.swift in Sources */,
 				01FD9B102686F2C100DABB36 /* SceneDelegate.swift in Sources */,
 				01FD9B472687CD9C00DABB36 /* FormattedText.swift in Sources */,

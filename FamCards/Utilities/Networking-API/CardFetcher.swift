@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-let apiURL: URL? = URL(string: "http://www.mocky.io/v2/5e2703792f00000d00a4f91d")
-
 protocol CardFetchable {
     func fetchCard() -> AnyPublisher<CardGroups, NetworkingError>
 }
