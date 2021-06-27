@@ -28,7 +28,7 @@ struct HC6View: View {
         .padding()
         .background(Color(hexCode: arrowCard.bg_color ?? "#FFFFFF"))
         .cardStyle()
-        .frame( minHeight: geometry.size.height*0.1, alignment: .leading)
+  //      .frame( height: geometry.size.height*0.1, alignment: .leading)
         }
     }
 }

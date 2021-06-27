@@ -13,7 +13,7 @@ struct ActionButtonView: View {
     
     @State var text: String
     @State var bgColor: Color
-    @State var textColor: Color
+    @State var textColor: String
     @State var url: String
     
     var body: some View {
@@ -22,10 +22,10 @@ struct ActionButtonView: View {
         }
         openURL(linkURL) }, label: {
             Text(text)
+                .foregroundColor(Color(hexCode: textColor))
         })
         .padding()
         .background(bgColor)
-        .foregroundColor(textColor)
         .cornerRadius(10)
         
     }

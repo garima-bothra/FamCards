@@ -37,7 +37,7 @@ struct HC1View: View {
         .padding()
         .background(Color(hexCode: smallCard.bg_color ?? "#FFFFFF"))
         .cardStyle()
-        .frame( minHeight: geometry.size.height*0.1, alignment: .leading)
+      //  .frame( height: geometry.size.height*0.1)
         }
     }
 }

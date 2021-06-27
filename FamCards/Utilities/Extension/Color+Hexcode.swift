@@ -12,7 +12,7 @@ import SwiftUI
 extension Color {
     
     init(hexCode: String) {
-        var colorString: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        var colorString: String = String(hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).dropFirst())
                 if colorString.hasPrefix("#") {
                     _ = colorString.removeFirst()
                 }

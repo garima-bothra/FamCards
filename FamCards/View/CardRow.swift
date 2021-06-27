@@ -15,12 +15,15 @@ struct CardRow: View {
     }
     
     var body: some View {
+        GeometryReader() { geometry in
         HStack(spacing:2){
             if let cards = viewModel.cards {
                 ForEach(0..<cards.count, id: \.self){
                     CardView(designType: viewModel.designType, card: viewModel.cards[$0])
                 }
             }
+        }
+     //   .frame(height: geometry.size.height*0.2)
         }
     }
 }

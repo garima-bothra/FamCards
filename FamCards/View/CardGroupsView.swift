@@ -16,21 +16,29 @@ struct CardGroupsView: View {
     
     var body: some View {
         GeometryReader() { geometry in
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 5) {
-            if let cardViewModels = viewModel.dataSource?.cardGroups {
+            NavigationView {
+                ScrollView() {
+                    VStack(spacing: 10) {
+                        Spacer()
+                        if let cardViewModels = viewModel.dataSource?.cardGroups {
             ForEach((0..<cardViewModels.count), id: \.self){
+                let design = cardViewModels[$0].designType
                 CardRow(viewModel: cardViewModels[$0])
-                    .frame( minHeight: geometry.size.height*0.3, alignment: .leading)
+                    .frame(height: geometry.size.height * CGFloat(getHeight(designType: design)))
                 }
+          //  .frame(maxHeight: .infinity)
             } else {
                 Text("Card Groups Nil")
             }
+                Spacer()
         }
-        .onAppear(perform: viewModel.refresh)
+                    .padding()
+            .background(Color(hexCode: "#F2F3F3"))
+                    .frame(width: geometry.size.width,height: geometry.size.height)
+            .onAppear(perform: viewModel.refresh)
         }
         }
-        
+        }
      //   GeometryReader { geometry in
      //   VStack() {
 //        List(content: content)

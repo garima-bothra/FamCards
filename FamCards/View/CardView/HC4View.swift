@@ -14,8 +14,11 @@ struct HC4View: View {
     var body: some View {
         GeometryReader { geometry in
         VStack {
-            RemoteImage(url: centreCard.bg_image?.image_url ?? "")
-            Spacer()
+            if let url = centreCard.icon?.image_url {
+            RemoteImage(url: url)
+                .aspectRatio(contentMode: .fit)
+                .frame(height: geometry.size.height * 0.25)
+            }
             Text(centreCard.name)
                 .font(.subheadline)
                 .foregroundColor(.gray)
@@ -29,16 +32,16 @@ struct HC4View: View {
             HStack {
                 ForEach(0..<cta.count, id: \.self){
                     var action = cta[$0]
-                    ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#FFFFFF"), textColor: Color(action.text_color ?? "#000000"), url: action.url ?? "")
+                    ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#FFFFFF"), textColor: (action.text_color ?? "#FFFFFF"), url: action.url ?? "")
                 }
             }
-            .frame(width: geometry.size.width)
+            .frame(width: geometry.size.width * 0.9)
             }
         }
         .padding()
         .background(Color(hexCode: centreCard.bg_color ?? "#FFFFFF"))
         .cardStyle()
-        .frame( minHeight: geometry.size.height*0.3, alignment: .leading)
+    //    .frame( height: geometry.size.height*0.3, alignment: .leading)
         }
     }
 }

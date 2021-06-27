@@ -30,3 +30,17 @@ struct CardGroup: Codable {
 
 typealias CardGroups = [CardGroup]
 
+func getHeight(designType: DesignType) -> Float {
+    switch designType {
+    case .HC1:
+        return 0.1
+    case .HC3 :
+        return 0.4
+    case .HC4 :
+        return 0.3
+    case .HC6 :
+        return 0.1
+    case .HC5:
+        return 0.15
+    }
+}

@@ -28,16 +28,16 @@ struct HC3View: View {
             HStack {
                 ForEach(0..<cta.count, id: \.self){
                     var action = cta[$0]
-                    ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#FFFFFF"), textColor: Color(action.text_color ?? "#000000"), url: action.url ?? "")
+                    ActionButtonView(text: action.text, bgColor: Color(hexCode:  action.bg_color ?? "#000000"), textColor: (action.text_color ?? "#FFFFFF"), url: action.url ?? "")
                 }
             }
             .frame(maxWidth: geometry.size.width)
             }
         }
         .padding()
-        .background(Color(hexCode: bigCard.bg_color ?? "#FFFFFF"))
+        .background(RemoteImage(url: bigCard.bg_image?.image_url ?? ""))
         .cardStyle()
-        .frame( minHeight: geometry.size.height*0.2, alignment: .leading)
+   //     .frame(height: geometry.size.height*0.3)
         }
     }
 }
