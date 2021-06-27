@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
+//MARK: Groups View Model
 class GroupsViewModel: ObservableObject {
     @Published var dataSource: CardGroupsViewModel?
     
@@ -40,7 +41,7 @@ class GroupsViewModel: ObservableObject {
     }
 }
 
-
+//MARK: Card Group View Model
 struct CardGroupViewModel: Identifiable {
     var id = UUID()
     
@@ -63,6 +64,8 @@ struct CardGroupViewModel: Identifiable {
     }
     
 }
+
+//MARK: Card Groups struct
 
 struct CardGroupsViewModel {
     private let item: [CardGroup]

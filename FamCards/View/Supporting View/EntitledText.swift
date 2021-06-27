@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//MARK: EntitledText - Bold (for titles)
+
 struct EntitledText: View {
     
     @Environment(\.openURL) var openURL
@@ -26,6 +28,8 @@ struct EntitledText: View {
             }
     }
 }
+
+//MARK: EntitledDescription - Regular (for subtitles)
 
 struct EntitledDescription: View {
     

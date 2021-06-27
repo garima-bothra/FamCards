@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: RemoteImage - Get images from URL
 struct RemoteImage: View {
     private enum LoadState {
         case loading, success, failure

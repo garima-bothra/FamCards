@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//MARK: FormattedText - Bold (for titles)
+
 struct FormattedText: View {
     
     @State var formatTitle: FormattedTitle
@@ -19,6 +21,8 @@ struct FormattedText: View {
     }
     }
 }
+
+//MARK: FormattedDescription - Regular (for subtitles)
 
 struct FormattedDescription: View {
     

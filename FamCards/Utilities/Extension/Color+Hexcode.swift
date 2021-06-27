@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import SwiftUI
 
+//MARK:  Get Color from hexCode
+
 extension Color {
     
     init(hexCode: String) {
@@ -56,6 +58,8 @@ extension Color {
                 }
     }
 }
+
+//MARK:  Get Gradient from Hexcodes
 
 func getGradient(hexStrings: [String?])-> Gradient {
     let colours: [Color] = hexStrings.map{ Color(hexCode: $0 ?? "#FFFFFF") }

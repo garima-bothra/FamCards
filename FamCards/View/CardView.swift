@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//MARK: CardView (based on card design)
+
 struct CardView: View {
     
     @State var designType: DesignType

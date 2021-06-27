@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//MARK: Main View - Card Groups View
+
 struct CardGroupsView: View {
     @ObservedObject var viewModel: GroupsViewModel
     

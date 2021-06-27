@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+//MARK: CardViewModel
+
 struct CardViewModel: Identifiable {
     private let item: Card
     

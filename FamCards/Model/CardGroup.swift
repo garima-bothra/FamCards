@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: DesignType for cards
+
 public enum DesignType: String, Codable, Hashable {
     /// Small display card.
     case HC1
@@ -20,6 +22,8 @@ public enum DesignType: String, Codable, Hashable {
     case HC6
 }
 
+//MARK: CardGroup
+
 struct CardGroup: Codable {
     var design_type: DesignType
     var name: String
@@ -30,6 +34,7 @@ struct CardGroup: Codable {
 
 typealias CardGroups = [CardGroup]
 
+//MARK: Height for each card (according to design type)
 func getHeight(designType: DesignType) -> Float {
     switch designType {
     case .HC1:
