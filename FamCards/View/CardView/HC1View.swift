@@ -22,6 +22,7 @@ struct HC1View: View {
                 VStack(alignment: .leading) {
                     if let title = smallCard.title {
                         Text(title)
+                            .bold()
                             .lineLimit(1)
                     }
                     if let subheadingText = smallCard.description {
