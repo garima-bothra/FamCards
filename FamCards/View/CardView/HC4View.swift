@@ -37,6 +37,8 @@ struct HC4View: View {
         }
         .padding()
         .background(Color(hexCode: centreCard.bg_color ?? "#FFFFFF"))
+        .cardStyle()
+        .frame( minHeight: geometry.size.height*0.3, alignment: .leading)
         }
     }
 }

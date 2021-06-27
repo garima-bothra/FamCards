@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
-class CardGroupViewModel: ObservableObject {
-    @Published var dataSource: CardViewModel?
+class GroupsViewModel: ObservableObject {
+    @Published var dataSource: CardGroupsViewModel?
     
     private let cardsFetcher: CardFetchable
     private var disposables = Set<AnyCancellable>()
@@ -19,14 +20,16 @@ class CardGroupViewModel: ObservableObject {
     }
     
     func refresh() {
-        cardsFetcher.fetchCard().map(CardViewModel.init)
+        cardsFetcher.fetchCard().map(CardGroupsViewModel.init)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] value in
               guard let self = self else { return }
               switch value {
               case .failure:
+                print("Fetch failed")
                 self.dataSource = nil
               case .finished:
+                print("Data fetched")
                 break
               }
             }, receiveValue: { [weak self] card in
@@ -38,14 +41,45 @@ class CardGroupViewModel: ObservableObject {
     }
 }
 
-class CardViewModel {
-    private let item : CardGroups
+//extension GroupsViewModel {
+//    var cardGroupView: some View {
+//      
+//      )
+//    }
+//}
+
+struct CardGroupViewModel: Identifiable {
+    var id = UUID()
     
-    var name: String {
-        item.forEach({ print("\($0.name)\n") })
-        return item[0].name
+    private let item : CardGroup
+    
+    var designType: DesignType {
+        return item.design_type
     }
-    init(item: CardGroups) {
+    
+    var cards: [Card] {
+        return item.cards
+    }
+    
+    var isScrollable: Bool {
+        return item.is_scrollable
+    }
+    
+    init(item: CardGroup) {
         self.item = item
     }
+    
+}
+
+struct CardGroupsViewModel {
+    private let item: [CardGroup]
+    
+    init(item:CardGroups) {
+        self.item = item
+    }
+    
+    var cardGroups: [CardGroupViewModel] {
+        return item.map{CardGroupViewModel(item: $0)}
+    }
+    
 }

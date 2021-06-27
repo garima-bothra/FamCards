@@ -14,6 +14,7 @@ struct HC6View: View {
     @State var arrowCard: Card
     
     var body: some View {
+        GeometryReader() { geometry in
         HStack {
         HC1View(smallCard: arrowCard)
         Spacer()
@@ -23,6 +24,11 @@ struct HC6View: View {
             openURL(linkURL) }, label: {
                 Image(systemName: "arrow.right")
             })
+        }
+        .padding()
+        .background(Color(hexCode: arrowCard.bg_color ?? "#FFFFFF"))
+        .cardStyle()
+        .frame( minHeight: geometry.size.height*0.1, alignment: .leading)
         }
     }
 }

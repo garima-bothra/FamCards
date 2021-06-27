@@ -35,7 +35,6 @@ extension Color {
                     let red = Double(r) / 255.0
                     let green = Double(g) / 255.0
                     let blue = Double(b) / 255.0
-                    print("RBG: \(red), \(blue), \(green)")
                     self.init(.sRGB, red: red, green: green, blue: blue, opacity: 1)
 
                 } else if colorString.count == 8 {

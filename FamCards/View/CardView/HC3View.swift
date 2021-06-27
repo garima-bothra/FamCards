@@ -34,6 +34,10 @@ struct HC3View: View {
             .frame(maxWidth: geometry.size.width)
             }
         }
+        .padding()
+        .background(Color(hexCode: bigCard.bg_color ?? "#FFFFFF"))
+        .cardStyle()
+        .frame( minHeight: geometry.size.height*0.2, alignment: .leading)
         }
     }
 }

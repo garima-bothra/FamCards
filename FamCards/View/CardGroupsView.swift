@@ -7,15 +7,30 @@
 
 import SwiftUI
 
-struct CardsView: View {
-    @ObservedObject var viewModel: CardGroupViewModel
+struct CardGroupsView: View {
+    @ObservedObject var viewModel: GroupsViewModel
     
-    init(viewModel: CardGroupViewModel){
+    init(viewModel: GroupsViewModel){
         self.viewModel = viewModel
     }
     
     var body: some View {
-        return EmptyView()
+        GeometryReader() { geometry in
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 5) {
+            if let cardViewModels = viewModel.dataSource?.cardGroups {
+            ForEach((0..<cardViewModels.count), id: \.self){
+                CardRow(viewModel: cardViewModels[$0])
+                    .frame( minHeight: geometry.size.height*0.3, alignment: .leading)
+                }
+            } else {
+                Text("Card Groups Nil")
+            }
+        }
+        .onAppear(perform: viewModel.refresh)
+        }
+        }
+        
      //   GeometryReader { geometry in
      //   VStack() {
 //        List(content: content)
@@ -45,21 +60,21 @@ struct CardsView: View {
     }
     }
 
-private extension CardsView {
-  func content() -> some View {
-    if let viewModel = viewModel.dataSource {
-      return AnyView(details(for: viewModel))
-    } else {
-      return AnyView(loading)
-    }
-  }
-
-  func details(for viewModel: CardViewModel) -> some View {
-    CardRow(viewModel: viewModel)
-  }
-
-  var loading: some View {
-    Text("Loading \(viewModel.dataSource.debugDescription)")
-      .foregroundColor(.gray)
-  }
-}
+//private extension CardsView {
+//  func content() -> some View {
+//    if let viewModel = viewModel.dataSource {
+//      return AnyView(details(for: viewModel))
+//    } else {
+//      return AnyView(loading)
+//    }
+//  }
+//
+//  func details(for viewModel: CardViewModel) -> some View {
+//    CardRow(viewModel: viewModel)
+//  }
+//
+//  var loading: some View {
+//    Text("Loading \(viewModel.dataSource.debugDescription)")
+//      .foregroundColor(.gray)
+//  }
+//}

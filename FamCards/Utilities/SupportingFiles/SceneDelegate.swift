@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         let fetcher = CardFetcher()
-        let viewModel = CardGroupViewModel(cardsFetcher: fetcher)
-        let cardsView = CardsView(viewModel: viewModel)
+        let viewModel = GroupsViewModel(cardsFetcher: fetcher)
+        let cardsView = CardGroupsView(viewModel: viewModel)
         // Create the SwiftUI view that provides the window contents.
         let contentView = cardsView
         // Use a UIHostingController as window root view controller.
